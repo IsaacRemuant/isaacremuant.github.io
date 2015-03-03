@@ -95,8 +95,8 @@
 <p>But why use the mouse at all?</p>
 <p>You don’t have to, the <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] tool is here to help you.</p>
 <p>See this <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2]</p>
-<p>I came across this tool when I was using <a href="">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
-<p>To <a href="">avoid getting out of home row</a> [4] I thought:</p>
+<p>I came across this tool when I was using <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
+<p>To <a href="http://www.typing.com/tutor/" target="_blank" rel="external">avoid getting out of home row</a> [4] I thought:</p>
 <p>“Why not <code>cd</code> once into the path and then copy the output of <code>pwd</code> and pass it into <code>cd</code> in the other screen?”</p>
 <p>So I did.</p>
 <p>In window 1)</p>
@@ -105,9 +105,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() executes the command within, -o is output</span></span><br></pre></td></tr></table></figure>
 <p><em>et voilà</em></p>
 <p>Note that in this case there was no need to pass -b parameter since I don’t really need it in the clipboard but my initial thought process involved having it there.</p>
-<p>Another thing to note is that I couldn’t simply use <a href="">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
+<p>Another thing to note is that I couldn’t simply use <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
 <p>Thoughts? Can you think of other useful use cases for this? Better ways to solve my dumb problem? gnu-screen/tmux/etc lovers/haters that want to contribute in any way?</p>
-<p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] screen and multiplexers<br>[4] touch typing home row<br>[5] environment variables</p>
+<p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen</a><br>[4] <a href="http://www.typing.com/tutor/" target="_blank" rel="external">http://www.typing.com/tutor/</a><br>[5] <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">https://wiki.archlinux.org/index.php/environment_variables</a></p>
 
       
     </div>
