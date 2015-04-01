@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>xsel: Copiar y pegar de la linea de comandos | In Case It Matters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
+Say you need to put something rapidly into the clipboard from the command line and output">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xsel: Copiar y pegar de la linea de comandos">
+<meta property="og:url" content="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/index.html">
+<meta property="og:site_name" content="In Case It Matters">
+<meta property="og:description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
+Say you need to put something rapidly into the clipboard from the command line and output">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xsel: Copiar y pegar de la linea de comandos">
+<meta name="twitter:description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
+Say you need to put something rapidly into the clipboard from the command line and output">
+
+  
+  
+  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><span class="site-title">In Case It Matters</span></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div class="profile" id="profile-nav">
+          <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/"><i class="fa fa-caret-down"></i></a>
+        </div>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="q" value="site:http://isaacremuant.github.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+      
+      <td>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://isaacremuant.github.io"></form>
+      </td>
+      </tr>
+    </table>
+  </div>
+  
+</header>
+    <div class="outer">
+      <aside id="profile">
+  <div class="inner profile-inner">
+  	<div class="base-info profile-block">
+		  <img id="avatar" src="/">
+      <h2 id="name">Isaac Remuant</h2>
+      <h3 id="title">undefined</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>undefined</span>
+      <a id="follow" href="undefined">关注我</a>
+  	</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        3
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        9
+        <span>标签</span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+        
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+      <section id="main"><article id="post-xsel-Copy-Paste-from-the-shell-pt-ES" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      xsel: Copiar y pegar de la linea de comandos
+    </h1>
+  
+
+		  
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/">
+    <time datetime="2014-10-27T11:31:34.000Z" itemprop="datePublished">2014-10-27</time>
+  </a>
+</div>
+          
+			 
+			 
+			 <div style="float: right;">
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/../2014-10-27-xsel-Copy-Paste-from-the-shell-en"><img src="/css/images/en.png"></img></a>
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/../2014-10-27-xsel-Copy-Paste-from-the-shell-pt-ES"><img src="/css/images/pt-ES.png"></img></a>			 
+			 </div>
+			 			 
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="o_como_abandonar_ese_bendito_mouse-">o como abandonar ese bendito mouse.</h2><h1 id="Today_I_learned_a_very_interesting_command_line_tool-">Today I learned a very interesting command line tool.</h1><p>Hoy aprendí un hecho m</p>
+<h1 id="Say_you_need_to_put_something_rapidly_into_the_clipboard_from_the_command_line_and_output_it_somewhere_else_later-">Say you need to put something rapidly into the clipboard from the command line and output it somewhere else later.</h1><p>Supon que tienes que </p>
+<p>I normally would’ve used the mouse for a quick copy paste.</p>
+<p>But why use the mouse at all?</p>
+<p>You don’t have to, the <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] tool is here to help you.</p>
+<p>See this <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2] to the question <em>“How do I send stdin to the clipboard?”</em>.</p>
+<p>I came across this tool when I was using <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
+<p>To <a href="http://www.typing.com/tutor/" target="_blank" rel="external">avoid getting out of the home row</a> [4] I thought:</p>
+<p>“Why not <code>cd</code> once into the path and then copy the output of <code>pwd</code> and pass it into <code>cd</code> in the other screen?”</p>
+<p>So I did.</p>
+<p>In window 1)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/folder</span><br><span class="line"><span class="built_in">pwd</span> | xsel -i -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i means input and -b clipboard</span></span><br></pre></td></tr></table></figure>
+<p>Move to window 2)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() executes the command within, -o is output</span></span><br></pre></td></tr></table></figure>
+<p><em>et voilà</em></p>
+<p>Note that in this case there was no need to pass the -b parameter since I don’t really need it in the clipboard but my initial thought process involved having it there.</p>
+<p>Another thing to note is that I couldn’t simply use <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
+<p>Thoughts? Can you think of other useful use cases for this? Better ways to solve my dumb problem? gnu-screen/tmux/etc lovers/haters that want to contribute in any way?</p>
+<p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen</a><br>[4] <a href="http://www.typing.com/tutor/" target="_blank" rel="external">http://www.typing.com/tutor/</a><br>[5] <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">https://wiki.archlinux.org/index.php/environment_variables</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/" data-id="ci7z1hpw6000er23bkhathf21" class="article-share-link">分享到</a>
+      
+        <a href="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/#disqus_thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/copiar/">copiar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linea-de-comandos/">linea de comandos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pegar/">pegar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xsel/">xsel</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Isaac Remuant<br>
+     
+    </div>
+  </div>
+</footer>
+    
+
+<script>
+  var disqus_shortname = 'isaacremuant';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
