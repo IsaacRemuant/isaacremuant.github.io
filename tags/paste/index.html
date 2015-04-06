@@ -65,16 +65,16 @@
       <h2 id="name">Isaac Remuant</h2>
       <h3 id="title">undefined</h3>
       <span id="location"><i class="fa fa-map-marker"></i>undefined</span>
-      <a id="follow" href="undefined">关注我</a>
+      <a id="follow" href="undefined">FOLLOW</a>
   	</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        3
-        <span>文章</span>
+        2
+        <span>posts</span>
       </div>
       <div class="article-info-block">
         9
-        <span>标签</span>
+        <span>tags</span>
       </div>
     </div>
     <div class="contact-info profile-block">
@@ -98,9 +98,79 @@
         </div>
     
 	 
+		<article id="post-xsel-Copy-Paste-from-the-shell-en" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/">xsel: Copy &amp; Paste from the shell</a>
+    </h1>
   
 
+		  
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/">
+    <time datetime="2014-10-27T11:31:34.000Z" itemprop="datePublished">2014-10-27</time>
+  </a>
+</div>
+          
+			 
+			 
+			 <div style="float: right;">
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/../xsel-Copy-Paste-from-the-shell-en"><img src="/css/images/en.png"></img></a>
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/../xsel-Copy-Paste-from-the-shell-es-ES"><img src="/css/images/es-ES.png"></img></a>			 
+			 </div>
+			 			 
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="or_how_to_abandon_that_pesky_mouse-">or how to abandon that pesky mouse.</h2><p>Today I learned a very interesting command line tool.</p>
+<p>Say you need to put something rapidly into the clipboard from the command line and output it somewhere else later.</p>
+<p>I normally would’ve used the mouse for a quick copy paste.</p>
+<p>But why use the mouse at all?</p>
+<p>You don’t have to, the <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] tool is here to help you.</p>
+<p>See this <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2] to the question <em>“How do I send stdin to the clipboard?”</em>.</p>
+<p>I came across this tool when I was using <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
+<p>To <a href="http://www.typing.com/tutor/" target="_blank" rel="external">avoid getting out of the home row</a> [4] I thought:</p>
+<p>“Why not <code>cd</code> once into the path and then copy the output of <code>pwd</code> and pass it into <code>cd</code> in the other screen?”</p>
+<p>So I did.</p>
+<p>In window 1)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/folder</span><br><span class="line"><span class="built_in">pwd</span> | xsel -i -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i means input and -b clipboard</span></span><br></pre></td></tr></table></figure>
+<p>Move to window 2)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() executes the command within, -o is output</span></span><br></pre></td></tr></table></figure>
+<p><em>et voilà</em></p>
+<p>Note that in this case there was no need to pass the -b parameter since I don’t really need it in the clipboard but my initial thought process involved having it there.</p>
+<p>Another thing to note is that I couldn’t simply use <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
+<p>Thoughts? Can you think of other useful use cases for this? Better ways to solve my dumb problem? gnu-screen/tmux/etc lovers/haters that want to contribute in any way?</p>
+<p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen</a><br>[4] <a href="http://www.typing.com/tutor/" target="_blank" rel="external">http://www.typing.com/tutor/</a><br>[5] <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">https://wiki.archlinux.org/index.php/environment_variables</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-en/" data-id="ci7z2i7qz0000463b7oyy0nlq" class="article-share-link">分享到</a>
+      
+        <a href="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-en/#disqus_thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command-line/">command line</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/copy/">copy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paste/">paste</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xsel/">xsel</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+	 
+  
+  
 </section>
       
     </div>

@@ -5,18 +5,24 @@
   
   <title>xsel: Copiar y pegar de la linea de comandos | In Case It Matters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
-Say you need to put something rapidly into the clipboard from the command line and output">
+  <meta name="description" content="O como abandonar ese bendito mouse.&amp;lt;!-- # Today I learned a very interesting command line tool. --&amp;gt;
+Hoy aprendí una herramienta muy interesante de la linea de comandos.
+&amp;lt;!--
+#Say you need to put somet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xsel: Copiar y pegar de la linea de comandos">
-<meta property="og:url" content="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/index.html">
+<meta property="og:url" content="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/index.html">
 <meta property="og:site_name" content="In Case It Matters">
-<meta property="og:description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
-Say you need to put something rapidly into the clipboard from the command line and output">
+<meta property="og:description" content="O como abandonar ese bendito mouse.&amp;lt;!-- # Today I learned a very interesting command line tool. --&amp;gt;
+Hoy aprendí una herramienta muy interesante de la linea de comandos.
+&amp;lt;!--
+#Say you need to put somet">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xsel: Copiar y pegar de la linea de comandos">
-<meta name="twitter:description" content="o como abandonar ese bendito mouse.Today I learned a very interesting command line tool.Hoy aprendí un hecho m
-Say you need to put something rapidly into the clipboard from the command line and output">
+<meta name="twitter:description" content="O como abandonar ese bendito mouse.&amp;lt;!-- # Today I learned a very interesting command line tool. --&amp;gt;
+Hoy aprendí una herramienta muy interesante de la linea de comandos.
+&amp;lt;!--
+#Say you need to put somet">
 
   
   
@@ -68,16 +74,16 @@ Say you need to put something rapidly into the clipboard from the command line a
       <h2 id="name">Isaac Remuant</h2>
       <h3 id="title">undefined</h3>
       <span id="location"><i class="fa fa-map-marker"></i>undefined</span>
-      <a id="follow" href="undefined">关注我</a>
+      <a id="follow" href="undefined">FOLLOW</a>
   	</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        3
-        <span>文章</span>
+        2
+        <span>posts</span>
       </div>
       <div class="article-info-block">
         9
-        <span>标签</span>
+        <span>tags</span>
       </div>
     </div>
     <div class="contact-info profile-block">
@@ -89,7 +95,7 @@ Say you need to put something rapidly into the clipboard from the command line a
     </div>
   </div>
 </aside>
-      <section id="main"><article id="post-xsel-Copy-Paste-from-the-shell-pt-ES" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-xsel-Copy-Paste-from-the-shell-es-ES" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -105,7 +111,7 @@ Say you need to put something rapidly into the clipboard from the command line a
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/">
+  <a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/">
     <time datetime="2014-10-27T11:31:34.000Z" itemprop="datePublished">2014-10-27</time>
   </a>
 </div>
@@ -113,8 +119,8 @@ Say you need to put something rapidly into the clipboard from the command line a
 			 
 			 
 			 <div style="float: right;">
-				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/../2014-10-27-xsel-Copy-Paste-from-the-shell-en"><img src="/css/images/en.png"></img></a>
-				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/../2014-10-27-xsel-Copy-Paste-from-the-shell-pt-ES"><img src="/css/images/pt-ES.png"></img></a>			 
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/../xsel-Copy-Paste-from-the-shell-en"><img src="/css/images/en.png"></img></a>
+				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/../xsel-Copy-Paste-from-the-shell-es-ES"><img src="/css/images/es-ES.png"></img></a>			 
 			 </div>
 			 			 
         </div>
@@ -122,32 +128,36 @@ Say you need to put something rapidly into the clipboard from the command line a
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="o_como_abandonar_ese_bendito_mouse-">o como abandonar ese bendito mouse.</h2><h1 id="Today_I_learned_a_very_interesting_command_line_tool-">Today I learned a very interesting command line tool.</h1><p>Hoy aprendí un hecho m</p>
-<h1 id="Say_you_need_to_put_something_rapidly_into_the_clipboard_from_the_command_line_and_output_it_somewhere_else_later-">Say you need to put something rapidly into the clipboard from the command line and output it somewhere else later.</h1><p>Supon que tienes que </p>
-<p>I normally would’ve used the mouse for a quick copy paste.</p>
-<p>But why use the mouse at all?</p>
-<p>You don’t have to, the <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] tool is here to help you.</p>
-<p>See this <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2] to the question <em>“How do I send stdin to the clipboard?”</em>.</p>
-<p>I came across this tool when I was using <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
-<p>To <a href="http://www.typing.com/tutor/" target="_blank" rel="external">avoid getting out of the home row</a> [4] I thought:</p>
-<p>“Why not <code>cd</code> once into the path and then copy the output of <code>pwd</code> and pass it into <code>cd</code> in the other screen?”</p>
-<p>So I did.</p>
-<p>In window 1)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/folder</span><br><span class="line"><span class="built_in">pwd</span> | xsel -i -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i means input and -b clipboard</span></span><br></pre></td></tr></table></figure>
-<p>Move to window 2)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() executes the command within, -o is output</span></span><br></pre></td></tr></table></figure>
+        <h2 id="O_como_abandonar_ese_bendito_mouse-">O como abandonar ese bendito mouse.</h2><!-- # Today I learned a very interesting command line tool. -->
+<p>Hoy aprendí una herramienta muy interesante de la linea de comandos.</p>
+<!--
+#Say you need to put something rapidly into the clipboard from the command line and output it somewhere else later.
+-->
+<p>Supón que tienes que copiar algo rápidamente en el portapapeles y ponerlo en otro lado, todo desde la linea de comandos.</p>
+<p>Usualmente hubiera usado el mouse para un rapido copiar y pegar.</p>
+<p>Pero porque usar el mouse cuando no hace falta?</p>
+<p>La herramienta <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] está aquí para ayudarte.</p>
+<p>Vean esta respuesta de <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2] a la pregunta <em>“Cómo envío (cosas del stdin) al portapapeles?”</em>.</p>
+<p>Me topé con esta herramienta cuando estaba usando <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] y luego the haber creado una nueva ventana quería hacer <code>cd</code> en el mismo directorio en ambas ventanas.</p>
+<p>Para <a href="http://www.typing.com/tutor/" target="_blank" rel="external">evitar quitar mis dedos de asdf jklñ (home row)</a> [4] pensé lo siguiente:</p>
+<p>“Porque no hacer <code>cd</code> una vez hacia la ruta hacia la ruta y luego copiar la salida de <code>pwd</code> y pasarlo al <code>cd</code> de la otra pantalla?”</p>
+<p>Así que lo hice</p>
+<p>En la ventana 1)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /ruta/a/la/carpeta</span><br><span class="line"><span class="built_in">pwd</span> | xsel -i -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i significa input/entrada y -b portapapeles/clipboard</span></span><br></pre></td></tr></table></figure>
+<p>Mover a la ventana 2)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() ejecuta el comando de adentro, -o output/salida</span></span><br></pre></td></tr></table></figure>
 <p><em>et voilà</em></p>
-<p>Note that in this case there was no need to pass the -b parameter since I don’t really need it in the clipboard but my initial thought process involved having it there.</p>
-<p>Another thing to note is that I couldn’t simply use <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
-<p>Thoughts? Can you think of other useful use cases for this? Better ways to solve my dumb problem? gnu-screen/tmux/etc lovers/haters that want to contribute in any way?</p>
+<p>Nótese que en esta caso no era necesario para el parámetro -b porque realmente no necesito que la info pase por el portapapeles pero mi modelo mental inicial incluía tenerlo ahí.</p>
+<p>Otra cosa digna de mención es que no podía simplemente usar <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">variables de entorno</a> [5] porque no son compartidas entre las ventanas del gnu-screen.</p>
+<p>Comentarios? Pueden pensar en otros usos útiles para esto? Formas mejores de resolver mi tonto problema? amantes/detractores de gnu-screen/tmux/etc que quieran contribuir de alguna manera a la discusión?</p>
 <p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen</a><br>[4] <a href="http://www.typing.com/tutor/" target="_blank" rel="external">http://www.typing.com/tutor/</a><br>[5] <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">https://wiki.archlinux.org/index.php/environment_variables</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/" data-id="ci7z1hpw6000er23bkhathf21" class="article-share-link">分享到</a>
+      <a data-url="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/" data-id="ci85vzbow0000e13bb16j1y0x" class="article-share-link">Compartir</a>
       
-        <a href="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-pt-ES/#disqus_thread" class="article-comment-link">评论</a>
+        <a href="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-es-ES/#disqus_thread" class="article-comment-link">Comentários</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/copiar/">copiar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linea-de-comandos/">linea de comandos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pegar/">pegar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xsel/">xsel</a></li></ul>
