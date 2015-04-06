@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>In Case It Matters</title>
+  <title>test-es-ES | In Case It Matters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Useful (Maybe) stuff I want to keep somewhere.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="In Case It Matters">
-<meta property="og:url" content="http://isaacremuant.github.io/index.html">
+  <meta name="description" content="ESto es una prueba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test-es-ES">
+<meta property="og:url" content="http://isaacremuant.github.io/2015/04/06/test-es-ES/index.html">
 <meta property="og:site_name" content="In Case It Matters">
-<meta property="og:description" content="Useful (Maybe) stuff I want to keep somewhere.">
+<meta property="og:description" content="ESto es una prueba">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="In Case It Matters">
-<meta name="twitter:description" content="Useful (Maybe) stuff I want to keep somewhere.">
+<meta name="twitter:title" content="test-es-ES">
+<meta name="twitter:description" content="ESto es una prueba">
 
   
   
@@ -96,22 +96,15 @@
     </div>
   </div>
 </aside>
-      <section id="main">
-    
-	 
-    
-	 
-    
-	 
-		<article id="post-xsel-Copy-Paste-from-the-shell-en" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-test-es-ES" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/">xsel: Copy &amp; Paste from the shell</a>
+    <h1 class="article-title" itemprop="name">
+      test-es-ES
     </h1>
   
 
@@ -119,16 +112,16 @@
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/">
-    <time datetime="2014-10-27T11:31:34.000Z" itemprop="datePublished">2014-10-27</time>
+  <a href="/2015/04/06/test-es-ES/">
+    <time datetime="2015-04-06T14:13:09.000Z" itemprop="datePublished">2015-04-06</time>
   </a>
 </div>
           
 			 
 			 
 			 <div style="float: right;">
-				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/../xsel-Copy-Paste-from-the-shell-en"><img src="/css/images/en.png"></img></a>
-				<a href="/2014/10/27/xsel-Copy-Paste-from-the-shell-en/../xsel-Copy-Paste-from-the-shell-es-ES"><img src="/css/images/es-ES.png"></img></a>			 
+				<a href="/2015/04/06/test-es-ES/../test-en"><img src="/css/images/en.png"></img></a>
+				<a href="/2015/04/06/test-es-ES/../test-es-ES"><img src="/css/images/es-ES.png"></img></a>			 
 			 </div>
 			 			 
         </div>
@@ -136,48 +129,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="or_how_to_abandon_that_pesky_mouse-">or how to abandon that pesky mouse.</h2><p>Today I learned a very interesting command line tool.</p>
-<p>Say you need to put something rapidly into the clipboard from the command line and output it somewhere else later.</p>
-<p>I normally would’ve used the mouse for a quick copy paste.</p>
-<p>But why use the mouse at all?</p>
-<p>You don’t have to, the <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">xsel</a> [1] tool is here to help you.</p>
-<p>See this <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">StackOverflow answer</a> [2] to the question <em>“How do I send stdin to the clipboard?”</em>.</p>
-<p>I came across this tool when I was using <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">gnu-screen</a> [3] and after having created a new window I wanted to <code>cd</code> into the same directory in both windows.</p>
-<p>To <a href="http://www.typing.com/tutor/" target="_blank" rel="external">avoid getting out of the home row</a> [4] I thought:</p>
-<p>“Why not <code>cd</code> once into the path and then copy the output of <code>pwd</code> and pass it into <code>cd</code> in the other screen?”</p>
-<p>So I did.</p>
-<p>In window 1)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/folder</span><br><span class="line"><span class="built_in">pwd</span> | xsel -i -b</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i means input and -b clipboard</span></span><br></pre></td></tr></table></figure>
-<p>Move to window 2)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(xsel -o -b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $() executes the command within, -o is output</span></span><br></pre></td></tr></table></figure>
-<p><em>et voilà</em></p>
-<p>Note that in this case there was no need to pass the -b parameter since I don’t really need it in the clipboard but my initial thought process involved having it there.</p>
-<p>Another thing to note is that I couldn’t simply use <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">environment variables</a> [5] because they’re not shared between windows in gnu-screen.</p>
-<p>Thoughts? Can you think of other useful use cases for this? Better ways to solve my dumb problem? gnu-screen/tmux/etc lovers/haters that want to contribute in any way?</p>
-<p>[1] <a href="http://linux.die.net/man/1/xsel" target="_blank" rel="external">http://linux.die.net/man/1/xsel</a><br>[2] <a href="http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard" target="_blank" rel="external">http://unix.stackexchange.com/questions/3892/how-do-i-send-stdin-to-the-clipboard</a><br>[3] <a href="http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen" target="_blank" rel="external">http://unix.stackexchange.com/questions/549/tmux-vs-gnu-screen</a><br>[4] <a href="http://www.typing.com/tutor/" target="_blank" rel="external">http://www.typing.com/tutor/</a><br>[5] <a href="https://wiki.archlinux.org/index.php/environment_variables" target="_blank" rel="external">https://wiki.archlinux.org/index.php/environment_variables</a></p>
+        <p>ESto es una prueba</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-en/" data-id="ci85zd4a30000g33ba1xg0962" class="article-share-link">Compartilhar</a>
+      <a data-url="http://isaacremuant.github.io/2015/04/06/test-es-ES/" data-id="ci85zd4b5000dg33bswln5j5b" class="article-share-link">Compartir</a>
       
-        <a href="http://isaacremuant.github.io/2014/10/27/xsel-Copy-Paste-from-the-shell-en/#disqus_thread" class="article-comment-link">Comentários</a>
+        <a href="http://isaacremuant.github.io/2015/04/06/test-es-ES/#disqus_thread" class="article-comment-link">Comentários</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command-line/">command line</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/copy/">copy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paste/">paste</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xsel/">xsel</a></li></ul>
-
     </footer>
   </div>
   
 </article>
 
 
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
-	 
-    
-	 
-  
-  
 </section>
       
         <aside id="sidebar">
@@ -303,7 +276,7 @@
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
